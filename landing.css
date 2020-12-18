@@ -355,7 +355,7 @@ h1 span:nth-child(4) {
 }
 
 .grincs {
-  background-image: url(/img/grincs.png);
+  background-image: url(img/grincs.png);
   background-size: cover;
   background-repeat: no-repeat;
   width: 75px;
