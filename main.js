@@ -10,7 +10,7 @@ const w = canvas.width;
 const h = canvas.height;
 
 const backgroundImage = new Image();
-backgroundImage.src = "/img/karifa.jpg";
+backgroundImage.src = "img/karifa.jpg";
 
 const flakes = [];
 class snowfall {
@@ -55,7 +55,7 @@ class snowfall {
   }
 }
 function play() {
-  let audio = new Audio("/img/Santa Claus Is Coming To Town.m4a");
+  let audio = new Audio("img/Santa Claus Is Coming To Town.m4a");
   audio.play();
 }
 setInterval(() => snowfall.snowFall(), 8);
