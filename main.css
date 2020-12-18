@@ -1,0 +1,473 @@
+@import url("https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap");
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+}
+
+#music {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.snowfall canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.snowfall > ul {
+  width: 100%;
+  background-color: rgb(248, 247, 247);
+  display: flex;
+  justify-content: flex-start;
+  padding: 0.5rem;
+}
+.snowfall > ul > #text {
+  font-size: 1.5rem;
+  font-family: "Mountains of Christmas", sans-serif;
+
+  margin-right: 4rem;
+  padding: 0.5rem 4rem 0 4rem;
+  border-right: 1px solid rgb(253, 60, 60);
+}
+.snowfall > ul > li {
+  color: black;
+  list-style: none;
+  padding: 0 2.5rem 0 2.5rem;
+  margin: 0 1rem;
+  font-size: 2rem;
+  font-family: "Mountains of Christmas", sans-serif;
+  cursor: pointer;
+}
+.snowfall > ul > li:hover {
+  background-color: rgb(253, 60, 60);
+}
+.snowfall > .container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.7;
+}
+
+.santa {
+  background: #3ac6f4;
+  top: 5%;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 0;
+  z-index: 1;
+}
+
+.santa .snow {
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  left: 18px;
+  top: 44px;
+}
+
+.santa .snow:after {
+  width: 6px;
+  height: 6px;
+  content: "";
+  display: inline-block;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: -14px;
+  left: 0px;
+}
+
+.santa .snow:before {
+  width: 4px;
+  height: 4px;
+  content: "";
+  display: inline-block;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -12px;
+  left: -11px;
+}
+
+.santa .hat {
+  width: 64px;
+  height: 31px;
+  border-radius: 200px 200px 0 0;
+  background: #ef4753;
+  margin: 0 auto;
+  top: -11px;
+  position: relative;
+  left: 5px;
+  z-index: 20;
+}
+
+.santa .hat:after {
+  width: 60px;
+  height: 15px;
+  border-radius: 20px;
+  content: "";
+  display: block;
+  background: white;
+  position: relative;
+  top: 22px;
+  left: -3px;
+}
+
+.santa .face {
+  width: 54px;
+  height: 57px;
+  background: white;
+  border-radius: 0px 0px 50px 50px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 20;
+  top: -6px;
+}
+
+.santa .face .eyes {
+  background: #f1ddd5;
+  width: 45px;
+  height: 15px;
+  margin: 0 auto;
+  position: relative;
+  left: -1px;
+  text-align: center;
+  top: 4px;
+  padding-top: 0px;
+}
+
+.santa .face .eyes:after,
+righteye {
+  width: 8px;
+  height: 6px;
+  background: transparent;
+  box-shadow: 0px -2px #793623;
+  content: "";
+  display: inline-block;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.santa .face .eyes:before,
+lefteye {
+  width: 8px;
+  height: 6px;
+  background: transparent;
+  box-shadow: 0px -2px #793623;
+  content: "";
+  display: inline-block;
+  margin: 0 auto;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.santa .mouth {
+  background: #a31f2b;
+  border-radius: 50%;
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  bottom: 20px;
+  right: 17px;
+}
+
+.santa .body {
+  width: 93px;
+  height: 84px;
+  background: #ef4753;
+  border-radius: 90px 90px 0px 0px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 10;
+}
+
+.santa .body:after {
+  width: 5px;
+  height: 5px;
+  background: white;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  top: 68px;
+  z-index: 50;
+  content: "";
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.santa .body:before {
+  width: 5px;
+  height: 5px;
+  background: white;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  top: 55px;
+  z-index: 50;
+  content: "";
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.santa .hat .hat-end {
+  width: 13px;
+  height: 32px;
+  content: "";
+  background: #ef4753;
+  display: inline-block;
+  position: absolute;
+  right: 0px;
+  top: 15px;
+  border-radius: 0px 11px 0px 0px;
+}
+
+.santa .hat .hat-end:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: white;
+  content: "";
+  display: inline-block;
+  top: 30px;
+  position: absolute;
+  left: 0px;
+  z-index: 11;
+}
+
+.circles {
+  background: #a31f2b;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  z-index: 9;
+  position: absolute;
+  right: -6px;
+  top: 12px;
+}
+
+.circles:after {
+  background: white;
+  width: 40px;
+  height: 40px;
+  right: 0;
+  top: 50px;
+  content: "";
+  border-radius: 50%;
+}
+
+.dirty-overflow {
+  overflow: hidden;
+  width: 120px;
+  height: 76px;
+  border-radius: 0px 0px 105px 105px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+video {
+  position: relative;
+  top: -18%;
+  left: 0%;
+  z-index: 0;
+}
+h1 {
+  font-size: 4.5rem;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  top: 40%;
+  font-family: "Mountains of Christmas";
+  text-align: center;
+  color: rgb(255, 255, 255);
+  text-shadow: 0px 5px 20px rgb(255, 255, 255);
+}
+h1 > span {
+  opacity: 0;
+  animation: animate 1s linear forwards;
+}
+@keyframes animate {
+  0% {
+    opacity: 0;
+    transform: rotateY(90deg);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0deg);
+    filter: blur(0);
+  }
+}
+h1 span:nth-child(1) {
+  animation-delay: 0.1s;
+}
+h1 span:nth-child(2) {
+  animation-delay: 1s;
+}
+h1 span:nth-child(3) {
+  animation-delay: 2s;
+}
+h1 span:nth-child(4) {
+  animation-delay: 3.5s;
+}
+#btn {
+  position: absolute;
+  top: 100%;
+  right: 44%;
+  font-family: sans-serif;
+  border: none;
+  outline: none;
+  padding: 22px 32px;
+  border-radius: 10px;
+  background-color: rgb(253, 60, 60);
+  color: white;
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+  z-index: 0;
+}
+#btn:hover {
+  background-color: rgb(172, 2, 2);
+}
+
+.grincs {
+  background-image: url(/img/grincs.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 75px;
+  height: 120px;
+  z-index: 99;
+  position: absolute;
+  top: 40%;
+  right: 30;
+  transform: rotate(315deg);
+  animation: animateGrincs 20s linear infinite;
+}
+
+@keyframes animateGrincs {
+  0% {
+    top: 70%;
+    right: -10%;
+  }
+  0% {
+    top: 70%;
+    right: -10%;
+  }
+  3% {
+    top: 70%;
+    right: -10%;
+  }
+  6% {
+    top: 80%;
+    right: -10%;
+  }
+  9% {
+    top: 80%;
+    right: -10%;
+  }
+  12% {
+    top: 60%;
+    right: -10%;
+  }
+  15% {
+    top: 60%;
+    right: -10%;
+  }
+
+  20% {
+    top: 70%;
+    right: 0;
+  }
+  25% {
+    top: 70%;
+    right: 0;
+  }
+  32% {
+    top: 70%;
+    right: 0;
+  }
+  38% {
+    top: 70%;
+    right: 0;
+  }
+  40% {
+    top: 80%;
+    right: -10%;
+  }
+  43% {
+    top: 80%;
+    right: -10%;
+  }
+  46% {
+    top: 80%;
+    right: -10%;
+  }
+  48% {
+    top: 100%;
+    right: -10%;
+  }
+
+  50% {
+    top: 120%;
+    right: -10%;
+  }
+  55% {
+    top: 120%;
+    right: 80%;
+    transform: scale(3);
+  }
+
+  60% {
+    top: 70%;
+    right: 80%;
+    transform: scale(3);
+  }
+  70% {
+    top: 70%;
+    right: 80%;
+    transform: scale(3);
+  }
+  80% {
+    top: 70%;
+    right: 80%;
+    transform: scale(3);
+  }
+  90% {
+    top: 70%;
+    right: 80%;
+    transform: scale(3);
+  }
+  100% {
+    top: 120%;
+    right: 80%;
+    transform: scale(3);
+  }
+}
+
+#music {
+  display: none;
+}
